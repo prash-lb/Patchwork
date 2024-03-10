@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    
+<project name="projet_patchwork" default="javadoc" basedir=".">
+  <description>build file</description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="classes"/>
+
+  <target name="init">
+	 <tstamp/>
+	 <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source">
+  	<javac srcdir="${src}"  includeantruntime="false" destdir="${build}">
+  		<classpath>
+  		  <pathelement path="${classpath}"/>
+  		  <pathelement location="lib/zen5.jar"/>
+  		</classpath>
+  	</javac>
+  </target>
+
+  <target name="jar" depends="compile" description="generate the jar file porject">
+    <jar jarfile="Patchwork.jar" basedir="${build}">
+        <manifest>
+            <attribute name="Main-Class" value="fr/uge/patchwork/main/Main"/>
+            <attribute name="Class-Path" value="."/>
+        </manifest>
+    </jar>
+  </target>
+
+  <target name="clean"
+        description="clean up">
+    <delete dir="${build}"/>
+    <delete dir="Patchwork.jar"/>
+	<mkdir dir="${build}"/>
+  </target>
+	
+  <target name="javadoc"  depends="compile"
+	     description="create javadoc">
+	<javadoc sourcepath="."  
+			destdir="docs/doc"
+			access = "public"
+			windowtitle="Patchwork API"
+			use="true">
+  	  <classpath>
+		<fileset dir="." defaultexcludes="yes">
+	 	  <include name="**/*.java"/>		
+  	  	  <include name="lib/zen5.jar"/>	
+		</fileset>
+  	  </classpath>
+	</javadoc>
+  </target>
+</project>
+<!-- Edited by Massiouane Maibeche & Prashath Sivayanama -->

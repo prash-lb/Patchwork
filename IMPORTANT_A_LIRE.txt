@@ -1,0 +1,36 @@
+/***************************
+ * Crée le 15/12/22 par :  *
+ *  Massiouane MAIBECHE et *
+ *  Prashath Sivayanama    *
+ ***************************/
+ 
+ 
+Le répertoire a etait vidé de ses fichiers contenus dans le 
+dossier classes.
+_________________________________________________________
+Lancer le build.xml en construisant les fichier .class
+ 
+(ant clean  - si ce n'est pas déjà le cas)
+ant compile
+
+_________________________________________________________
+Nettoyer le repertoire avec la commande suivante :
+
+ant clean
+_________________________________________________________
+Generer la javadoc avec la commande suivante :
+
+ant javadoc
+_________________________________________________________
+reformer un nouveau jar avec la commande suivante :
+--> Prenez des précautions en utilisant cette commande, car celle-ci 
+permets de jouer au jeu en mode ASCII seulement.
+--> Nous en sommes désolés, et nous vous prions de nous en excusé.
+
+ant jar
+_________________________________________________________
+Executer le fichier jar avec la commande suivante :
+
+java -jar Patchwork.jar
+_________________________________________________________
+

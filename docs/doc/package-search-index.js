@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fr.uge.patchwork"},{"l":"fr.uge.patchwork.graphics"}];updateSearchResults();
